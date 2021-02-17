@@ -22,8 +22,9 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(cors);
 
-endpointConfig(app, '/about', endpoints.aboutRouter);
+endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
+endpointConfig(app, '/teacher', endpoints.teacherRoutes);
 
 app.listen(port, () => {
     console.log(server_success_msg + port);
