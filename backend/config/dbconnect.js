@@ -9,7 +9,7 @@ mongoose.connect(db_uri,
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
-        useFindAndModify: true
+        useFindAndModify: false
     }
 )
     .then(() => console.log(db_success_msg))
