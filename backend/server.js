@@ -10,6 +10,8 @@ const localhost = process.env.LOCALHOST_URL;
 require('./config/dbconnect.js');
 
 const cors = require('./middlewares/cors.js');
+const endpointConfig = require('./utils/router-config.js');
+const endpoints = require('./routes/routes.js');
 
 const app = express();
 app.use(morgan("combined"));
@@ -19,6 +21,8 @@ app.use(express.urlencoded({
 );
 app.use(express.json());
 app.use(cors);
+
+endpointConfig(app, '/contact', endpoints.contactRoutes);
 
 app.listen(port, () => {
     console.log(server_success_msg + port);
