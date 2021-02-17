@@ -20,7 +20,7 @@ const controller = {
     update: async (req, res) => {
         try {
             await about.findByIdAndUpdate(req.params.id, req.body);
-            res.sendStatus(201);
+            res.sendStatus(200);
         } catch (err) {
             res.status(404).send(err);
         }
@@ -28,7 +28,7 @@ const controller = {
     delete: async (req, res) => {
         try {
             await about.findByIdAndDelete(req.params.id);
-            res.sendStatus(201);
+            res.sendStatus(200);
         } catch (err) {
             res.status(404).send(err);
         }
