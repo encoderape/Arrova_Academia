@@ -3,7 +3,7 @@ const rating = require('../models/ratingModel.js');
 const controller = {
     create: async (req, res) => {
         try{
-            let item = await rating.create(req.body);
+            const item = await rating.create(req.body);
             res.status(201).send(item);
         }catch(err) {
             res.status(500).send(err);
@@ -12,7 +12,7 @@ const controller = {
 
     read: async (req, res) => {
         try{
-            let item = await rating.find({});
+            const item = await rating.find({});
             res.status(201).send(item);
         }catch(err) {
             res.status(500).send(err);
@@ -21,7 +21,7 @@ const controller = {
 
     readByRate: async (req, res) => {
         try{
-            let item = await rating.find({'rating':req.params.rating});
+            const item = await rating.find({'rating':req.params.rating});
             res.status(201).send(item);
         }catch(err) {
             res.status(404).send(err);
@@ -30,7 +30,7 @@ const controller = {
 
     readByDate: async (req, res) => {
         try{
-            let item = await rating.find({'date':req.params.date});
+            const item = await rating.find({'date':req.params.date});
             res.status(201).send(item);
         }catch(err) {
             res.status(404).send(err);
