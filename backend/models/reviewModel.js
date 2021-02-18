@@ -17,5 +17,5 @@ const schema = new mongoose.Schema(
     {timestamps: true}
 );
 
-const model = mongoose.model('Rating', schema);
+const model = mongoose.model('Review', schema);
 module.exports = model;
