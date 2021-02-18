@@ -21,7 +21,7 @@ const controller = {
 
     readByRate: async (req, res) => {
         try{
-            let item = await rating.find(req.params.rating);
+            let item = await rating.find(req.params.rate);
             res.status(201).send(item);
         }catch(err) {
             res.status(404).send(err);
