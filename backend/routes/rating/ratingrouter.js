@@ -4,8 +4,8 @@ const router = express => {
     const api = express.Router(); 
     api.post('/create', method.create);
     api.get('/read', method.read);
-    api.get('/read/:rate', method.readByRate);
-    api.get('/read/:date', method.redByDate);
+    api.get('/read/:rating', method.readByRate);
+    api.get('/read/:date', method.readByDate);
     return api;
 };
 

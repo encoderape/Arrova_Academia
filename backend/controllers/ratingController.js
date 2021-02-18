@@ -21,16 +21,16 @@ const controller = {
 
     readByRate: async (req, res) => {
         try{
-            let item = await rating.find(req.params.rate);
+            let item = await rating.find({'rating':req.params.rating});
             res.status(201).send(item);
         }catch(err) {
             res.status(404).send(err);
         }
     },
 
-    redByDate: async (req, res) => {
+    readByDate: async (req, res) => {
         try{
-            let item = await rating.find(req.params.date);
+            let item = await rating.find({'date':req.params.date});
             res.status(201).send(item);
         }catch(err) {
             res.status(404).send(err);
