@@ -1,11 +1,11 @@
 const aboutRoutes = require('./about/aboutRouter.js');
 const contactRoutes = require('./contact/contactRouter.js');
-const teacherRoutes = require('./teacher/teacherRouter.js');
 const reviewRoutes = require('./review/reviewRouter.js');
+const teacherRoutes = require('./teacher/teacherRouter.js');
 
 module.exports = {
     aboutRoutes,
     contactRoutes,
-    teacherRoutes,
     reviewRoutes,
+    teacherRoutes,
 };

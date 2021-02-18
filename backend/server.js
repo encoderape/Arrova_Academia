@@ -24,8 +24,8 @@ app.use(cors);
 
 endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
-endpointConfig(app, '/teacher', endpoints.teacherRoutes);
 endpointConfig(app, '/review', endpoints.reviewRoutes);
+endpointConfig(app, '/teacher', endpoints.teacherRoutes);
 
 app.listen(port, () => {
     console.log(server_success_msg + port);

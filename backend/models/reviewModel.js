@@ -6,7 +6,7 @@ const schema = new mongoose.Schema(
             type: String,
             //TODO: enum
         },
-        commentary: {
+        comment: {
             type: String,
             maxlength: 500
         },
