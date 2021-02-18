@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
 
 const user = require('../models/userModel.js');
 
@@ -62,6 +63,39 @@ const controller = {
         try {
             await user.findByIdAndDelete(req.params.id);
             res.sendStatus(200);
+        } catch (err) {
+            res.status(404).send(err);
+        }
+    },
+    resetPassword: async (req, res) => {
+        try {
+            await crypto.randomBytes(32, (err, buffer) => {
+                if (err) {
+                    res.status(400).send(err);
+                }
+                const token = buffer.toString('hex');
+                const item = user.findOne({email: req.body.email});
+                if (!item) {
+                    res.sendStatus(404);
+                }
+                item.resetToken = token;
+                item.resetTokenExpiration = Date.now() + 3600000;
+                res.status(200).send(item);
+                // TODO: SEND RESET EMAIL TO USER WITH UNIQUE TOKEN
+            })
+        } catch (err) {
+            res.status(500).send(err);
+        }
+    },
+    createNewPassword: async (req, res) => {
+        try {
+            const item = await user.findOne({resetToken: req.params.token, resetTokenExpiration: {$gt: Date.now()}, email: req.body.email});
+            req.body.password = await bcrypt.hash(req.body.password, 10);
+            item.password = req.body.password;
+            item.resetToken = null;
+            item.resetTokenExpiration = null;
+            res.status(200).send(item);
+            // TODO: SEND RESET EMAIL CONFIRMATION
         } catch (err) {
             res.status(404).send(err);
         }
