@@ -7,7 +7,7 @@ const schema = new mongoose.Schema(
         },
         image: {
             type: String,
-            default: '*.jpg'
+            //TODO: SOLO permitir jpeg, jpg y png
         },
         description: {
             type: String,
@@ -20,5 +20,5 @@ const schema = new mongoose.Schema(
     {timestamps: true}
 );
 
-const model = mongoose.model('Information', schema);
+const model = mongoose.model('News', schema);
 module.exports = model;
