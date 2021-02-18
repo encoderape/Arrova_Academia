@@ -11,7 +11,10 @@ const schema = new mongoose.Schema(
             maxlength: 500
         },
         rating: {
-            type: Number
+            type: Number,
+            required: true,
+            min: 1,
+            max: 5,
         },
     },
     {timestamps: true}
