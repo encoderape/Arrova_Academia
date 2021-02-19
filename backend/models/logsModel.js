@@ -30,7 +30,6 @@ const schema = new mongoose.Schema(
         }
     },
     {timestamps: true}
-    
 );
 
 const model = mongoose.model('Logs', schema);
