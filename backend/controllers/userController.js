@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
+require('dotenv').config();
+
 const user = require('../models/userModel.js');
 
 const controller = {
@@ -25,7 +27,7 @@ const controller = {
             if (!passMatch) {
                 return res.sendStatus(400);
             }
-            const token = jwt.sign({_id: item._id}, "secret");
+            const token = jwt.sign({_id: item._id}, process.env.ACCESS_TOKEN_SECRET);
             // TODO: DELETE OLD TOKEN AND INSERT NEW
             const login = await user.findByIdAndUpdate({_id: item._id}, { $push: {tokens: token}});
             res.status(200).send(login);
