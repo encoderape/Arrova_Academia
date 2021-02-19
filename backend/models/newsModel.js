@@ -4,21 +4,20 @@ const schema = new mongoose.Schema(
     {
         title: {
             type: String,
-            required: true
+            required: true,
         },
         image: {
             type: String,
-            required: true
-            //TODO: SOLO permitir jpeg, jpg y png
+            required: true,
         },
         description: {
             type: String,
             required: true,
-            maxlength: 300
+            maxlength: 300,
         },
         content: {
             type: String,
-            required: true
+            required: true,
         },
     },
     {timestamps: true}

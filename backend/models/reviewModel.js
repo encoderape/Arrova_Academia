@@ -4,13 +4,13 @@ const schema = new mongoose.Schema(
     {
         type: {
             type: String,
-            required: true
-            //TODO: enum
+            required: true,
+            enum: ['curso', 'profesor', 'app', 'general'],
         },
         comment: {
             type: String,
             required: true,
-            maxlength: 500
+            maxlength: 500,
         },
         rating: {
             type: Number,

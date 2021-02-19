@@ -51,8 +51,6 @@ const schema = new mongoose.Schema(
         },
         tokens: [{
             type: String,
-            // TODO: MAX ARRAY LENGHT = 5
-            // TODO: ON MAX REMOVE THE OLDEST
         }],
         resetToken: {
             type: String,

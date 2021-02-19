@@ -26,6 +26,7 @@ const controller = {
                 return res.sendStatus(400);
             }
             const token = jwt.sign({_id: item._id}, "secret");
+            // TODO: DELETE OLD TOKEN AND INSERT NEW
             const login = await user.findByIdAndUpdate({_id: item._id}, { $push: {tokens: token}});
             res.status(200).send(login);
         } catch (err) {

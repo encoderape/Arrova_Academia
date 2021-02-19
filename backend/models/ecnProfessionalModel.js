@@ -4,38 +4,38 @@ const schema = new mongoose.Schema(
     {
         companyName: {
             type: String,
-            required: true
+            required: true,
         },
         locate: {
             type: String,
-            required: true
+            required: true,
         },
         address: {
             type: String,
-            required: true
+            required: true,
         },
         phone: {
             type: Number,
             required: true,
-            maxlength: 9
+            maxlength: 9,
         },
         email: {
             type: String,
-            required: true
+            required: true,
         },
         fullName: {
             type: String,
-            required: true
+            required: true,
         },
         comment: {
             type: String,
-            required: true
+            required: true,
         },
         terms: {
             type: Boolean,
             required: true,
-            default: false
-        }
+            default: false,
+        },
     },
     {timestamps: true}
 );

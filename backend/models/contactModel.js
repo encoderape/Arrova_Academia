@@ -14,7 +14,7 @@ const schema = new mongoose.Schema(
         subject: {
             type: String,
             required: true,
-            // TODO: Enum
+            enum: ['asistencia técnica', 'curso', 'trabajo']
         },
         message: {
             type: String,
@@ -30,9 +30,9 @@ const schema = new mongoose.Schema(
             type: Date,
             default: Date.now,
             index: {
-                expires: ms('30 days')
-            }
-        }
+                expires: ms('30 days'),
+            },
+        },
     },
     {timestamps: true}
 );
