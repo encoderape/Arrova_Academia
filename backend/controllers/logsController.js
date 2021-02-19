@@ -9,7 +9,6 @@ const controller = {
             res.status(400).send(err);
         }
     },
-    //TODO: autodelete
 };
 
 module.exports = controller;
