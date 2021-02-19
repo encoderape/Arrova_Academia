@@ -5,30 +5,30 @@ const schema = new mongoose.Schema(
     {
         message: {
             type: String,
-            required: true
+            required: true,
         },
         additional: {
-            type: [String]
+            type: [String],
         },
         level: {
             type: Number,
-            required: true
+            required: true,
         },
         fileName: {
             type: String,
-            required: true
+            required: true,
         },
         lineNumber: {
             type: String,
-            required: true
+            required: true,
         },
         expireAt: {
             type: Date,
             default: Date.now,
             index: {
-                expires: ms('30 days')
-            }
-        }
+                expires: ms('30 days'),
+            },
+        },
     },
     {timestamps: true}
 );
