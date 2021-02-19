@@ -25,6 +25,7 @@ app.use(cors);
 endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
 endpointConfig(app, '/review', endpoints.reviewRoutes);
+endpointConfig(app, '/news', endpoints.newsRoutes)
 endpointConfig(app, '/teacher', endpoints.teacherRoutes);
 
 app.listen(port, () => {
