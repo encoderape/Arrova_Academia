@@ -32,7 +32,7 @@ const controller = {
             const login = await user.findByIdAndUpdate({_id: item._id}, { $push: {tokens: token}});
             res.status(200).send(login);
         } catch (err) {
-            res.status(500).send(err);
+            res.status(400).send(err);
         }
     },
     read: async (req, res) => {
