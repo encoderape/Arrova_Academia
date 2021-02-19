@@ -1,6 +1,6 @@
 const mongoose  = require('mongoose');
 
-const schema = mongoose.Schema(
+const schema = new mongoose.Schema(
     {
         message: {
             type: String,
@@ -20,9 +20,16 @@ const schema = mongoose.Schema(
         lineNumber: {
             type: String,
             required: true
+        },
+        expireAt: {
+            type: Date,
+            default: Date.now,
+            index: {
+                expires: '30s'
+            }
         }
     },
-    {timestamps: true},
+    {timestamps: true}
 );
 
 const model = mongoose.model('Logs', schema);

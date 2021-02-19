@@ -1,5 +1,6 @@
 const aboutRoutes = require('./about/aboutRouter.js');
 const contactRoutes = require('./contact/contactRouter.js');
+const ecnProfessionalRoutes = require('./ecnProfessional/ecnProfessionalRouter.js');
 const logsRoutes = require('./log/logsRouter.js');
 const newsRoutes = require('./news/newsRouter.js');
 const reviewRoutes = require('./review/reviewRouter.js');
@@ -9,6 +10,7 @@ const userRoutes = require('./user/userRouter.js');
 module.exports = {
     aboutRoutes,
     contactRoutes,
+    ecnProfessionalRoutes,
     logsRoutes,
     newsRoutes,
     reviewRoutes,

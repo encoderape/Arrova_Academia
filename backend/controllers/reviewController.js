@@ -9,7 +9,6 @@ const controller = {
             res.status(500).send(err);
         }
     },
-
     read: async (req, res) => {
         try{
             const item = await review.find({});
