@@ -4,10 +4,12 @@ const schema = new mongoose.Schema(
     {
         type: {
             type: String,
+            required: true
             //TODO: enum
         },
         comment: {
             type: String,
+            required: true,
             maxlength: 500
         },
         rating: {
