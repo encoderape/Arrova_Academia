@@ -11,8 +11,8 @@ const controller = {
     },
     read: async (req, res) => {
         try{
-            const item = await professional.find({});
-            res.status(200).send(item);
+            const items = await professional.find({});
+            res.status(200).send(items);
         }catch(err) {
             res.status(400).send(err);
         }
