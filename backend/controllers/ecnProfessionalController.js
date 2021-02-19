@@ -9,7 +9,24 @@ const controller = {
             res.status(400).send(err);
         }
     },
-    //TODO: autodelete
+    
+    read: async (req, res) => {
+        try{
+            const item = await professional.find({});
+            res.status(200).send(item);
+        }catch(err) {
+            res.status(400).send(err);
+        }
+    },
+
+    deleteById: async (req, res) => {
+        try{
+            const item = await professional.findByIdAndDelete(req.params.id);
+            res.sendStatus(200);
+        }catch(err) {
+            res.status(404).send(err);
+        }   
+    }
 };
 
 module.exports = controller;
