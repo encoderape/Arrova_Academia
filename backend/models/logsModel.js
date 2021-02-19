@@ -1,4 +1,5 @@
-const mongoose  = require('mongoose');
+const mongoose = require('mongoose');
+const ms = require('ms');
 
 const schema = new mongoose.Schema(
     {
@@ -25,7 +26,7 @@ const schema = new mongoose.Schema(
             type: Date,
             default: Date.now,
             index: {
-                expires: '30s'
+                expires: ms('30 days')
             }
         }
     },
