@@ -9,7 +9,6 @@ const controller = {
             res.status(400).send(err);
         }
     },
-    
     read: async (req, res) => {
         try{
             const item = await professional.find({});
@@ -18,7 +17,6 @@ const controller = {
             res.status(400).send(err);
         }
     },
-
     deleteById: async (req, res) => {
         try{
             const item = await professional.findByIdAndDelete(req.params.id);

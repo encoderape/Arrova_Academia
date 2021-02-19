@@ -9,7 +9,6 @@ const controller = {
             res.status(400).send(err);
         }
     },
-
     read: async (req, res) => {
         try{
             const item = await news.find({});
@@ -18,7 +17,6 @@ const controller = {
             res.status(400).send(err);
         }
     },
-
     readById: async (req, res) => {
         try{
             const item = await news.findById(req.params.id);
@@ -27,7 +25,6 @@ const controller = {
             res.status(404).send(err);
         }
     },
-
     updateById: async (req, res) => {
         try{
             const item = await news.findByIdAndUpdate(req.params.id, req.body);
@@ -36,7 +33,6 @@ const controller = {
             res.status(404).send(err);
         }
     },
-
     deleteById: async (req, res) => {
         try{
             const item = await news.findByIdAndDelete(req.params.id);

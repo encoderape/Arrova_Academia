@@ -20,9 +20,17 @@ const schema = new mongoose.Schema(
         lineNumber: {
             type: String,
             required: true
+        },
+        expireAt: {
+            type: Date,
+            default: Date.now,
+            index: {
+                expires: '30s'
+            }
         }
     },
-    {timestamps: true},
+    {timestamps: true,}
+    
 );
 
 const model = mongoose.model('Logs', schema);
