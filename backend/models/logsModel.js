@@ -22,7 +22,7 @@ const schema = mongoose.Schema(
             required: true
         }
     },
-    {timestamps: true}
+    {timestamps: true},
 );
 
 const model = mongoose.model('Logs', schema);
