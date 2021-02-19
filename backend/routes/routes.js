@@ -3,6 +3,7 @@ const contactRoutes = require('./contact/contactRouter.js');
 const reviewRoutes = require('./review/reviewRouter.js');
 const newsRoutes = require('./news/newsRouter.js');
 const teacherRoutes = require('./teacher/teacherRouter.js');
+const userRoutes = require('./user/userRouter.js');
 
 module.exports = {
     aboutRoutes,
@@ -10,4 +11,5 @@ module.exports = {
     reviewRoutes,
     newsRoutes,
     teacherRoutes,
+    userRoutes,
 };
