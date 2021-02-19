@@ -24,6 +24,7 @@ app.use(cors);
 
 endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
+endpointConfig(app, '/news', endpoints.newsRoutes);
 endpointConfig(app, '/review', endpoints.reviewRoutes);
 endpointConfig(app, '/teacher', endpoints.teacherRoutes);
 endpointConfig(app, '/user', endpoints.userRoutes);
