@@ -1,4 +1,4 @@
-const method = require('../../controllers/ecnValencianController.js');
+const method = require('../../controllers/ecnValencianoController.js');
 
 const router = express => {
     const api = express.Router();

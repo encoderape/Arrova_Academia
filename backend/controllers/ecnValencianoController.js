@@ -1,4 +1,4 @@
-const valencian = require('../models/encValencianModel.js');
+const valencian = require('../models/encValencianoModel.js');
 
 const controller = {
     create:  async (req, res) => {

@@ -47,5 +47,5 @@ const schema = new mongoose.Schema(
     {timestamps: true}
 );
 
-const model = mongoose.model('EcnValencian', schema);
+const model = mongoose.model('EcnValenciano', schema);
 module.exports = model;
