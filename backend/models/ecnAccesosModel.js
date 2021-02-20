@@ -3,10 +3,10 @@ const ms = require('ms');
 
 const schema = new mongoose.Schema(
     {
-        title: {
+        accessTest: {
             type: String,
-            enum: ['eso', 'bach'],
-            required: true
+            enum: ['cgm', 'cgs', 'uni', 'uni+25', 'uni+40'],
+            require: true
         },
         nativeLenguage: {
             type: String,
@@ -20,7 +20,7 @@ const schema = new mongoose.Schema(
         },
         studies: {
             type: String,
-            enum: ['eso', 'egb', 'bup', 'bach', 'cou'],
+            enum: ['eso', 'egb', 'bup', 'bach', 'cou', 'superiores', 'cgm', 'cgs', 'sin'],
             required: true
         },
         email: {
@@ -34,7 +34,6 @@ const schema = new mongoose.Schema(
         },
         comment: {
             type: String,
-            maxlength: 500,
             required: true
         },
         expireAt: {
@@ -45,8 +44,8 @@ const schema = new mongoose.Schema(
             },
         },
     },
-    {timestamps: true}
+    {timestamps:true}
 );
 
-const model = mongoose.model('EcnTitulaciones', schema);
+const model = mongoose.model('EcnAccesos', schema);
 module.exports = model;
