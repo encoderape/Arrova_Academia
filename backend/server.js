@@ -24,7 +24,7 @@ app.use(cors);
 
 endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
-andpointConfig(app, '/ecnAccesos', endpoints.ecnAccesosRoutes)
+endpointConfig(app, '/ecnAccesos', endpoints.ecnAccesosRoutes)
 endpointConfig(app, '/ecnProfessional', endpoints.ecnProfessionalRoutes);
 endpointConfig(app, '/ecnTitulaciones', endpoints.ecnTitulacionesRoutes);
 endpointConfig(app, '/ecnValenciano', endpoints.ecnValencianoRoutes);

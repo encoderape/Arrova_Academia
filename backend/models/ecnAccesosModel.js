@@ -32,7 +32,7 @@ const schema = new mongoose.Schema(
             type: Boolean,
             default: false
         },
-        comments: {
+        comment: {
             type: String,
             required: true
         },
