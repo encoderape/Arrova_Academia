@@ -34,8 +34,16 @@ const schema = new mongoose.Schema(
             type: String,
             maxlength: 500,
             required: true
-        }
-    }
+        },
+        expireAt: {
+            type: Date,
+            default: Date.now,
+            index: {
+                expires: ms('30 days'),
+            },
+        },
+    },
+    {timestamps: true}
 );
 
 const model = mongoose.model('EcnValencian', schema);
