@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
-const schema = new mongooseSchema(
+const schema = new mongoose.Schema(
     {
         title: {
             type: String,
