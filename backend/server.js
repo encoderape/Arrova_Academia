@@ -25,6 +25,7 @@ app.use(cors);
 endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
 endpointConfig(app, '/ecnProfessional', endpoints.ecnProfessionalRoutes);
+endpointConfig(app, '/encTitulaciones', endpoints.ecnTitulacionesRoutes);
 endpointConfig(app, '/ecnValenciano', endpoints.ecnValencianoRoutes);
 endpointConfig(app, '/logs', endpoints.logsRoutes);
 endpointConfig(app, '/news', endpoints.newsRoutes);
