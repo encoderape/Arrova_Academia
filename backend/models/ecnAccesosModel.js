@@ -32,6 +32,10 @@ const schema = new mongoose.Schema(
             type: Boolean,
             default: false
         },
+        comments: {
+            type: String,
+            required: true
+        },
         expireAt: {
             type: Date,
             default: Date.now,
