@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
+const onlyStrings = require('../validators/only-string.js');
+
 const schema = new mongoose.Schema(
     {
         companyName: {
@@ -10,6 +12,7 @@ const schema = new mongoose.Schema(
         locate: {
             type: String,
             required: true,
+            validate: onlyStrings,
         },
         address: {
             type: String,
@@ -27,6 +30,7 @@ const schema = new mongoose.Schema(
         fullName: {
             type: String,
             required: true,
+            validate: onlyStrings,
         },
         comment: {
             type: String,
