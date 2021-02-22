@@ -3,11 +3,11 @@ const ms = require('ms');
 const schema = new mongoose.Schema(
     {
         letters: {
-            type: String,
+            type: [String],
             enum: ['val', 'cas', 'latin', 'ingles', 'geo', 'historia'],
         },
         sciences: {
-            type: String,
+            type: [String],
             enum: ['mates', 'fiq', 'bio', 'geo']
         },
         email: {

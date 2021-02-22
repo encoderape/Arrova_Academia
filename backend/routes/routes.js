@@ -2,6 +2,7 @@ const aboutRoutes = require('./about/aboutRouter.js');
 const contactRoutes = require('./contact/contactRouter.js');
 const ecnAccesosRoutes = require('./ecn/ecnAccesosRouter.js');
 const ecnProfessionalRoutes = require('./ecn/ecnProfessionalRouter.js');
+const ecnRefuerzosBachRoutes = require('./ecn/ecnRefuerzosBachController.js');
 const ecnRefuerzosEsoRoutes = require('./ecn/ecnRefuerzosEsoRouter.js');
 const ecnTitulacionesRoutes = require('./ecn/ecnTitulacionesRouter.js')
 const ecnValencianoRoutes = require('./ecn/ecnValencianoRouter.js');
@@ -16,6 +17,7 @@ module.exports = {
     contactRoutes,
     ecnAccesosRoutes,
     ecnProfessionalRoutes,
+    ecnRefuerzosBachRoutes,
     ecnRefuerzosEsoRoutes,
     ecnTitulacionesRoutes,
     ecnValencianoRoutes,
