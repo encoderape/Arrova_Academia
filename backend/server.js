@@ -10,7 +10,7 @@ const localhost = process.env.LOCALHOST_URL;
 require('./config/dbconnect.js');
 
 const cors = require('./middlewares/cors.js');
-const endpointConfig = require('./utils/router-config.js');
+const endpointConfig = require('./utils/routerConfig.js');
 const endpoints = require('./routes/routes.js');
 
 const app = express();

@@ -1,5 +1,5 @@
 const method = require('../../controllers/ecnAccesosController.js');
-const isAdminAuth = require('../../middlewares/admin-auth.js');
+const isAdminAuth = require('../../middlewares/adminAuth.js');
 
 const router = express => {
     const api = express.Router();

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
-const onlyStrings = require('../validators/only-string.js');
+const onlyStrings = require('../validators/onlyStringValidator.js');
 
 const schema = new mongoose.Schema(
     {

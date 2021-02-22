@@ -1,6 +1,6 @@
 const method = require('../../controllers/userController.js');
-const isUserAuth = require('../../middlewares/user-auth.js');
-const isAdminAuth = require('../../middlewares/admin-auth.js');
+const isUserAuth = require('../../middlewares/userAuth.js');
+const isAdminAuth = require('../../middlewares/adminAuth.js');
 
 const router = express => {
     const api = express.Router();
