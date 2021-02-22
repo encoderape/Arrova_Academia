@@ -1,26 +1,33 @@
 const mongoose = require('mongoose');
 
+const onlyStrings = require('../validators/onlyStringValidator.js');
+
 const schema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: true,
+            validate: onlyStrings,
         },
         surname1: {
             type: String,
             required: true,
+            validate: onlyStrings,
         },
         surname2: {
             type: String,
             required: true,
+            validate: onlyStrings,
         },
         username: {
             type: String,
             required: true,
+            unique: true,
         },
         email: {
             type: String,
             required: true,
+            unique: true,
         },
         password: {
             type: String,

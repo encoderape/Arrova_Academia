@@ -10,7 +10,7 @@ const localhost = process.env.LOCALHOST_URL;
 require('./config/dbconnect.js');
 
 const cors = require('./middlewares/cors.js');
-const endpointConfig = require('./utils/router-config.js');
+const endpointConfig = require('./utils/routerConfig.js');
 const endpoints = require('./routes/routes.js');
 
 const app = express();
@@ -25,7 +25,7 @@ app.use(cors);
 endpointConfig(app, '/about', endpoints.aboutRoutes);
 endpointConfig(app, '/contact', endpoints.contactRoutes);
 endpointConfig(app, '/ecnAccesos', endpoints.ecnAccesosRoutes)
-endpointConfig(app, '/ecnProfessional', endpoints.ecnProfessionalRoutes);
+endpointConfig(app, '/ecnProfesional', endpoints.ecnProfesionalRoutes);
 endpointConfig(app, '/ecnRefuerzosBach', endpoints.ecnRefuerzosBachRoutes);
 endpointConfig(app, '/ecnRefuerzosEso', endpoints.ecnRefuerzosEsoRoutes);
 endpointConfig(app, '/ecnRefuerzosUni', endpoints.ecnRefuerzosUniRoutes);

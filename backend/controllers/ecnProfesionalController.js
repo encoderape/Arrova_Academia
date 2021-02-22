@@ -1,4 +1,4 @@
-const professional = require('../models/ecnProfessionalModel.js');
+const professional = require('../models/ecnProfesionalModel.js');
 
 const controller = {
     create: async (req, res) => {
