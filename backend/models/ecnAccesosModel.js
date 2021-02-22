@@ -26,7 +26,6 @@ const schema = new mongoose.Schema(
         email: {
             type: String,
             required: true,
-            //TODO: REGEX
         },
         terms: {
             type: Boolean,

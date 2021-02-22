@@ -3,25 +3,13 @@ const ms = require('ms');
 
 const schema = new mongoose.Schema(
     {
-        title: {
+        letters: {
             type: String,
-            enum: ['eso', 'bach'],
-            required: true
+            enum: ['val', 'cas', 'latin', 'ingles', 'geo', 'historia'],
         },
-        nativeLenguage: {
+        sciences: {
             type: String,
-            enum: ['valenciano', 'castellano'],
-            required: true
-        },
-        englishLevel: {
-            type: String,
-            enum: ['a2', 'b1', 'b2', 'c1', 'c2', 'sin'],
-            required: true
-        },
-        studies: {
-            type: String,
-            enum: ['eso', 'egb', 'bup', 'bach', 'cou'],
-            required: true
+            enum: ['mates', 'fiq', 'bio', 'geo']
         },
         email: {
             type: String,
@@ -33,7 +21,6 @@ const schema = new mongoose.Schema(
         },
         comment: {
             type: String,
-            maxlength: 500,
             required: true
         },
         expireAt: {
@@ -47,5 +34,5 @@ const schema = new mongoose.Schema(
     {timestamps: true}
 );
 
-const model = mongoose.model('EcnTitulaciones', schema);
+const model = mongoose.model('EcnRefuerzosEso', schema);
 module.exports = model;
