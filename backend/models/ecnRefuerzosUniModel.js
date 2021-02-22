@@ -17,5 +17,5 @@ const schema = new mongoose.Schema(
     }
 );
 
-const model = mongoose.model('/ecnRefuezosUni', schema);
+const model = mongoose.model('ecnRefuerzosUni', schema);
 module.exports = model;
