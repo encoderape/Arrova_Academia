@@ -8,7 +8,7 @@ const schema = new mongoose.Schema(
             enum: ['a2', 'b1', 'b2', 'c1', 'c2'],
             required: true
         },
-        nativeLenguage: {
+        nativeLanguage: {
             type: String,
             enum: ['valenciano', 'castellano'],
             required: true
@@ -19,7 +19,7 @@ const schema = new mongoose.Schema(
         },
         studies: {
             type: String,
-            enum: ['eso', 'bach', 'cgm', 'cgs', 'superiores'],
+            enum: ['eso', 'bachillerato', 'ciclo formativo de grado medio', 'ciclo formativo de grado superior', 'estudios superiores'],
             required: true
         },
         email: {

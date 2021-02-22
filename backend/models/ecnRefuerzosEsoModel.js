@@ -3,18 +3,14 @@ const ms = require('ms');
 
 const schema = new mongoose.Schema(
     {
-        letters: [
-            {
-                type: String,
-                enum: ['val', 'cas', 'latin', 'ingles', 'geo', 'historia']
-            }
-        ],
-        sciences: [
-            {
-                type: String,
-                enum: ['mates', 'fiq', 'bio', 'geo']
-            }
-        ],
+        letters: [{
+            type: String,
+            enum: ['valenciano', 'castellano', 'latín', 'inglés', 'geografía', 'historia']
+        }],
+        sciences: [{
+            type: String,
+            enum: ['matemáticas', 'física y química', 'biología y geología']
+        }],
         email: {
             type: String,
             required: true,
