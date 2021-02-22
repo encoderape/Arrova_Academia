@@ -5,18 +5,14 @@ const schema = new mongoose.Schema(
     {
         letters: [
             {
-                subject: {
-                    type: [String],
-                    enum: ['val', 'cas', 'latin', 'griego', 'ingles', 'filo', 'geo', 'hist', 'hist arte', 'hist esp']
-                }
+                type: String,
+                enum: ['val', 'cas', 'latin', 'griego', 'ingles', 'filo', 'geo', 'hist', 'hist arte', 'hist esp']
             }
         ],
         sciences: [
             {
-                subject: {
-                    type: [String],
-                    enum: ['mates', 'mates aplicadas', 'fisica', 'quimica', 'bio', 'geo']
-                }
+                type: String,
+                enum: ['mates', 'mates aplicadas', 'fisica', 'quimica', 'bio', 'geo']
             }
         ],
         email: {
