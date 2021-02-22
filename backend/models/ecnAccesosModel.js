@@ -5,10 +5,10 @@ const schema = new mongoose.Schema(
     {
         accessTest: {
             type: String,
-            enum: ['cgm', 'cgs', 'uni', 'uni+25', 'uni+40'],
+            enum: ['ciclo formativo de grado medio', 'ciclo formativo de grado superior', 'universidad', 'universidad +25', 'universidad +40'],
             require: true
         },
-        nativeLenguage: {
+        nativeLanguage: {
             type: String,
             enum: ['valenciano', 'castellano'],
             required: true
@@ -18,11 +18,11 @@ const schema = new mongoose.Schema(
             enum: ['a2', 'b1', 'b2', 'c1', 'c2', 'sin'],
             required: true
         },
-        studies: {
+        studies: [{
             type: String,
-            enum: ['eso', 'egb', 'bup', 'bach', 'cou', 'superiores', 'cgm', 'cgs', 'sin'],
+            enum: ['eso', 'egb', 'bup', 'bachillerato', 'cou', 'estudios superiores', 'ciclo formativo de grado medio', 'ciclo formativo de grado superior', 'sin'],
             required: true
-        },
+        }],
         email: {
             type: String,
             required: true,

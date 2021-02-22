@@ -5,10 +5,10 @@ const schema = new mongoose.Schema(
     {
         title: {
             type: String,
-            enum: ['eso', 'bach'],
+            enum: ['eso', 'bachillerato'],
             required: true
         },
-        nativeLenguage: {
+        nativeLanguage: {
             type: String,
             enum: ['valenciano', 'castellano'],
             required: true
@@ -20,7 +20,7 @@ const schema = new mongoose.Schema(
         },
         studies: {
             type: String,
-            enum: ['eso', 'egb', 'bup', 'bach', 'cou'],
+            enum: ['eso', 'egb', 'bup', 'bachillerato', 'cou'],
             required: true
         },
         email: {
