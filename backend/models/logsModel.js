@@ -19,7 +19,7 @@ const schema = new mongoose.Schema(
             required: true,
         },
         lineNumber: {
-            type: String,
+            type: Number,
             required: true,
         },
         expireAt: {

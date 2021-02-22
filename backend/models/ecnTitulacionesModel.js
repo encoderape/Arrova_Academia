@@ -3,7 +3,7 @@ const ms = require('ms');
 
 const schema = new mongoose.Schema(
     {
-        title: {
+        degree: {
             type: String,
             enum: ['eso', 'bachillerato'],
             required: true
@@ -20,7 +20,7 @@ const schema = new mongoose.Schema(
         },
         studies: {
             type: String,
-            enum: ['eso', 'egb', 'bup', 'bachillerato', 'cou'],
+            enum: ['eso', 'egb', 'bup', 'bachillerato', 'cou', 'sin'],
             required: true
         },
         email: {

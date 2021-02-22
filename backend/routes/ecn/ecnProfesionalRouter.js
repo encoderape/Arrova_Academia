@@ -1,4 +1,4 @@
-const method = require('../../controllers/ecnProfessionalController.js');
+const method = require('../../controllers/ecnProfesionalController.js');
 const isAdminAuth = require('../../middlewares/admin-auth.js');
 
 const router = express => {

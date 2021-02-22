@@ -3,7 +3,7 @@ const ms = require('ms');
 
 const schema = new mongoose.Schema(
     {
-        title: {
+        degree: {
             type: String,
             enum: ['a2', 'b1', 'b2', 'c1', 'c2'],
             required: true
@@ -13,13 +13,13 @@ const schema = new mongoose.Schema(
             enum: ['valenciano', 'castellano'],
             required: true
         },
-        previousTitle: {
+        previousDegree: {
             type: Boolean,
             required: true
         },
         studies: {
             type: String,
-            enum: ['eso', 'bachillerato', 'ciclo formativo de grado medio', 'ciclo formativo de grado superior', 'estudios superiores'],
+            enum: ['eso', 'bachillerato', 'ciclo formativo de grado medio', 'ciclo formativo de grado superior', 'estudios superiores', 'sin'],
             required: true
         },
         email: {
