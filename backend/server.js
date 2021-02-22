@@ -27,7 +27,8 @@ endpointConfig(app, '/contact', endpoints.contactRoutes);
 endpointConfig(app, '/ecnAccesos', endpoints.ecnAccesosRoutes)
 endpointConfig(app, '/ecnProfessional', endpoints.ecnProfessionalRoutes);
 endpointConfig(app, '/ecnRefuerzosBach', endpoints.ecnRefuerzosBachRoutes);
-endpointConfig(app, '/ecnRefuerzosEso', endpoints.ecnRefuerzosEsoRoutes)
+endpointConfig(app, '/ecnRefuerzosEso', endpoints.ecnRefuerzosEsoRoutes);
+endpointConfig(app, '/ecnRefuerzosUni', endpoints.ecnRefuerzosUniRoutes);
 endpointConfig(app, '/ecnTitulaciones', endpoints.ecnTitulacionesRoutes);
 endpointConfig(app, '/ecnValenciano', endpoints.ecnValencianoRoutes);
 endpointConfig(app, '/logs', endpoints.logsRoutes);
