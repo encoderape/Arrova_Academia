@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
+
 const schema = new mongoose.Schema(
     {
         letters: {
@@ -13,7 +14,6 @@ const schema = new mongoose.Schema(
         email: {
             type: String,
             required: true,
-            //TODO: REGEX
         },
         terms: {
             type: Boolean,
