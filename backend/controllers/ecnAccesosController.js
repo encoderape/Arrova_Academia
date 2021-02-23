@@ -1,4 +1,5 @@
 const accesos = require('../models/ecnAccesosModel.js');
+const sendMail = require('../config/nodemailer.js');
 
 const controller = {
     create: async (req, res) => {
