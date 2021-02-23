@@ -1,4 +1,4 @@
-const emailValidator = require('../validators/emailValidator.js');
+const emailValidator = require('../../validators/emailValidator.js');
 
 describe('email validation', () => {
     test('this is an email with .com', () => {

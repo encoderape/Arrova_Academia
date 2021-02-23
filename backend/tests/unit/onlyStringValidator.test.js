@@ -1,4 +1,4 @@
-const onlyStringValidator = require('../validators/onlyStringValidator.js')
+const onlyStringValidator = require('../../validators/onlyStringValidator.js')
 
 describe('only strings validation', () => {
     test('this is an only string', () => {
