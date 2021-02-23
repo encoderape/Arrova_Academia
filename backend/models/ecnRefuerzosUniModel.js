@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
+const emailValidator = require('../validators/emailValidator.js');
+
 const schema = new mongoose.Schema(
     {
         email: {
             type: String,
-            required: true
+            required: true,
+            validate: emailValidator,
         },
         terms: {
             type: Boolean,
