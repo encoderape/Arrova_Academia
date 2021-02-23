@@ -13,6 +13,9 @@ const schema = new mongoose.Schema(
             required: true,
             validate: imageExtensionValidator,
         },
+        video: {
+            type: String,
+        },
         description: {
             type: String,
             required: true,
