@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
-const onlyStringValidator = require('../validators/onlyStringValidator.js');
 const emailValidator = require('../validators/emailValidator.js');
+const onlyStringValidator = require('../validators/onlyStringValidator.js');
 
 const schema = new mongoose.Schema(
     {

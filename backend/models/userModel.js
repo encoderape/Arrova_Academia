@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const emailValidator = require('../validators/emailValidator.js');
+const imageExtensionValidator = require('../validators/imageExtensionValidator.js');
 const onlyStringValidator = require('../validators/onlyStringValidator.js');
 const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
 
@@ -43,6 +44,7 @@ const schema = new mongoose.Schema(
         },
         image: {
             type: String,
+            validate: imageExtensionValidator,
         },
         birthdate: {
             type: Date,
