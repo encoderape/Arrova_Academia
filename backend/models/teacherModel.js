@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+const imageExtensionValidator = require('../validators/imageExtensionValidator.js');
 const onlyStringValidator = require('../validators/onlyStringValidator.js');
 
 const schema = new mongoose.Schema(
@@ -8,6 +9,11 @@ const schema = new mongoose.Schema(
             type: String,
             required: true,
             validate: onlyStringValidator,
+        },
+        image: {
+            type: String,
+            required: true,
+            validate: imageExtensionValidator,
         },
         biography: [{
             type: String,
