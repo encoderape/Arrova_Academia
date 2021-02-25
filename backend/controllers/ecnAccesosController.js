@@ -8,7 +8,7 @@ const controller = {
             const item = await accesos.create(req.body);
             await accesosPdf(item);
             setTimeout(() => {
-                sendMail(item.email, `Estudia con nosotros Accesos ${item.fullName}`);
+                sendMail(item.email, `Estudia con nosotros Accesos ${item.fullName}`, 'accesos.pdf');
                 res.status(201).send(item);
             }, 2000);
         } catch (err) {

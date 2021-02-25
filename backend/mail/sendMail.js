@@ -8,15 +8,15 @@ require('dotenv').config();
 
 const mail = process.env.MAIL;
 
-function sendMail(userMail, subject) {
+function sendMail(userMail, subject, fileName) {
     const mailInfo = {
         from: mail,
         to: userMail,
         subject: subject,
         attachments: [
             {
-                filename: 'accesos.pdf',
-                path: path.join(rootDir, 'assets', 'pdf', 'accesos.pdf'),
+                filename: fileName,
+                path: path.join(rootDir, 'assets', 'pdf', fileName),
                 contentType: 'application/pdf',
             },
         ]
@@ -24,7 +24,7 @@ function sendMail(userMail, subject) {
 
     transporter.sendMail(mailInfo);
     setTimeout(() => {
-        deletePdf('accesos.pdf');
+        deletePdf(fileName);
     }, 1000);
 }
 
