@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const ms = require('ms');
 
 const emailValidator = require('../validators/emailValidator.js');
+const onlyStringValidator = require('../validators/onlyStringValidator.js');
 const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
 
 const schema = new mongoose.Schema(
@@ -26,6 +27,11 @@ const schema = new mongoose.Schema(
             enum: ['eso', 'egb', 'bup', 'bachillerato', 'cou', 'estudios superiores', 'ciclo formativo de grado medio', 'ciclo formativo de grado superior', 'sin'],
             required: true
         }],
+        fullName: {
+            type: String,
+            required: true,
+            validate: onlyStringValidator,
+        },
         email: {
             type: String,
             required: true,
