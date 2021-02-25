@@ -1,4 +1,4 @@
-const method = require('../../controllers/encTitulacionesController.js');
+const method = require('../../controllers/ecnTitulacionesController.js');
 const isAdminAuth = require('../../middlewares/adminAuth.js');
 
 const router = express => {
