@@ -10,7 +10,7 @@ const options = {
 }
 
 function createPdf(content, fileName) {
-    pdf.create(content, options).toFile(path.join(rootDir, 'files', fileName), () => {
+    pdf.create(content, options).toFile(path.join(rootDir, 'assets', 'pdf' , fileName), () => {
         console.log('pdf created successfully');
     });
 }
