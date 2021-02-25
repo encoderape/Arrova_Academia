@@ -1,32 +1,40 @@
 const nodemailer = require('nodemailer');
+const path = require('path');
 const keys = require('./keys');
-const createPdf = require('./pdf');
 
-function sendMail(req, res) {
-    async function mail(envio) {
-        const transporter = nodemailer.createTransport({
-            host: 'smtp.arrovacademia.es',
-            port: 25,
-            secure: false,
-            auth: {
-                user: keys.mail.email,
-                pass: keys.mail.pass
-            },
-            tls: {
-                rejectUnauthorized: false
-            }
-        });
+async function mail() {
+    const transporter = await nodemailer.createTransport({
+        host: 'smtp.arrovacademia.es',
+        port: 25,
+        secure: false,
+        auth: {
+            user: keys.mail.email,
+            pass: keys.mail.pass
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
 
-        createPdf();
+    const info = {
+        from: 'contacto@arrovacademia.es',
+        to: 'rmorenor97@gmail.com',
+        subject: 'se envio wey',
+        attachments: [
+            {
+                filename: 'accesos.pdf',
+                path: path.join(__dirname, '../accesos.pdf'),
+                contentType: 'application/pdf'
+            }]
+    };
 
-        const info = await transporter.sendMail({
-            from: 'contacto@arrovacademia.es',
-            to: 'rmorenor97@gmail.com',
-            subject: 'se envio wey',
-            text: envio
-        });
-    }
-    return mail;
-}
+    await transporter.sendMail(info, (error, info) => {
+        if(error) {
+            console.log(error);
+        }else {
+            console.log('correo enviado');
+        }
+    });
+};
 
-module.exports = sendMail;
+module.exports = mail;

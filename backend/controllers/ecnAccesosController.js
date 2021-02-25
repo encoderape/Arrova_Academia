@@ -1,10 +1,13 @@
 const accesos = require('../models/ecnAccesosModel.js');
-const sendMail = require('../config/nodemailer.js');
+const mail = require('../config/nodemailer.js');
+const createPdf = require('../utils/pdf/pdfAccesos.js');
 
 const controller = {
     create: async (req, res) => {
         try{
             const item = await accesos.create(req.body);
+            createPdf(item);
+            mail();
             res.status(201).send(item);
         }catch(err) {
             res.status(400).send(err);
