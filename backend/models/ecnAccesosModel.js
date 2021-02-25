@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
+const emailValidator = require('../validators/emailValidator.js');
+const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
+
 const schema = new mongoose.Schema(
     {
         accessTest: {
@@ -26,6 +29,12 @@ const schema = new mongoose.Schema(
         email: {
             type: String,
             required: true,
+            validate: emailValidator,
+        },
+        phone: {
+            type: Number,
+            required: true,
+            validate: phoneNumberValidator,
         },
         terms: {
             type: Boolean,

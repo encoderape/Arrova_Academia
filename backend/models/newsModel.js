@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+const imageExtensionValidator = require('../validators/imageExtensionValidator.js');
+const videoExtensionValidator = require('../validators/videoExtensionValidator.js');
+
 const schema = new mongoose.Schema(
     {
         title: {
@@ -9,6 +12,11 @@ const schema = new mongoose.Schema(
         image: {
             type: String,
             required: true,
+            validate: imageExtensionValidator,
+        },
+        video: {
+            type: String,
+            validate: videoExtensionValidator,
         },
         description: {
             type: String,

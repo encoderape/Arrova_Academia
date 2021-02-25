@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const ms = require('ms');
 
-const onlyStrings = require('../validators/onlyStringValidator.js');
+const emailValidator = require('../validators/emailValidator.js');
+const onlyStringValidator = require('../validators/onlyStringValidator.js');
+const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
 
 const schema = new mongoose.Schema(
     {
@@ -12,7 +14,7 @@ const schema = new mongoose.Schema(
         locate: {
             type: String,
             required: true,
-            validate: onlyStrings,
+            validate: onlyStringValidator,
         },
         address: {
             type: String,
@@ -21,16 +23,17 @@ const schema = new mongoose.Schema(
         phone: {
             type: Number,
             required: true,
-            maxlength: 9,
+            validate: phoneNumberValidator,
         },
         email: {
             type: String,
             required: true,
+            validate: emailValidator,
         },
         fullName: {
             type: String,
             required: true,
-            validate: onlyStrings,
+            validate: onlyStringValidator,
         },
         comment: {
             type: String,

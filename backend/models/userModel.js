@@ -1,23 +1,27 @@
 const mongoose = require('mongoose');
 
-const onlyStrings = require('../validators/onlyStringValidator.js');
+const dniValidator = require('../validators/dniValidator.js');
+const emailValidator = require('../validators/emailValidator.js');
+const imageExtensionValidator = require('../validators/imageExtensionValidator.js');
+const onlyStringValidator = require('../validators/onlyStringValidator.js');
+const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
 
 const schema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: true,
-            validate: onlyStrings,
+            validate: onlyStringValidator,
         },
         surname1: {
             type: String,
             required: true,
-            validate: onlyStrings,
+            validate: onlyStringValidator,
         },
         surname2: {
             type: String,
             required: true,
-            validate: onlyStrings,
+            validate: onlyStringValidator,
         },
         username: {
             type: String,
@@ -28,6 +32,17 @@ const schema = new mongoose.Schema(
             type: String,
             required: true,
             unique: true,
+            validate: emailValidator,
+        },
+        phone: {
+            type: Number,
+            required: true,
+            validate: phoneNumberValidator,
+        },
+        dni: {
+            type: String,
+            required: true,
+            validate: dniValidator,
         },
         password: {
             type: String,
@@ -35,6 +50,7 @@ const schema = new mongoose.Schema(
         },
         image: {
             type: String,
+            validate: imageExtensionValidator,
         },
         birthdate: {
             type: Date,
