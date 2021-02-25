@@ -1,23 +1,25 @@
 const accesos = require('../models/ecnAccesosModel.js');
-const mail = require('../config/nodemailer.js');
-const createPdf = require('../utils/pdf/pdfAccesos.js');
+const accesosPdf = require('../mail/accesosPdf.js');
+const sendMail = require('../mail/sendMail.js');
 
 const controller = {
     create: async (req, res) => {
-        try{
+        try {
             const item = await accesos.create(req.body);
-            createPdf(item);
-            mail();
-            res.status(201).send(item);
-        }catch(err) {
+            await accesosPdf(item);
+            setTimeout(() => {
+                sendMail(item.email, `Estudia con nosotros Accesos ${item.fullName}`, 'accesos.pdf');
+                res.status(201).send(item);
+            }, 2000);
+        } catch (err) {
             res.status(400).send(err);
         }
     },
     read: async (req, res) => {
-        try{
+        try {
             const items = await accesos.find({});
             res.status(200).send(items);
-        }catch(err) {
+        } catch (err) {
             res.status(400).send(err)
         }
     }
