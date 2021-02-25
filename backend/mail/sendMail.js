@@ -1,4 +1,4 @@
-const path = require('backend/utils/path');
+const path = require('path');
 
 const transporter = require('./mailTransporter.js');
 const rootDir = require('../utils/path.js');

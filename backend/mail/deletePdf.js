@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('backend/utils/path');
+const path = require('path');
 
 const rootDir = require('../utils/path.js');
 
