@@ -1,7 +1,7 @@
 const pdf = require('html-pdf');
-const path = require('path');
+const path = require('backend/utils/path');
 
-const rootDir = require('./path.js');
+const rootDir = require('../utils/path.js');
 
 const options = {
     header: {

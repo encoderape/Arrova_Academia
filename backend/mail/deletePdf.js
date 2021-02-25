@@ -1,7 +1,7 @@
 const fs = require('fs');
-const path = require('path');
+const path = require('backend/utils/path');
 
-const rootDir = require('./path.js');
+const rootDir = require('../utils/path.js');
 
 function deletePdf(fileName) {
     fs.unlink(path.join(rootDir, 'assets', 'pdf', fileName), () => {

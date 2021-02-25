@@ -1,7 +1,7 @@
-const path = require('path');
+const path = require('backend/utils/path');
 
 const transporter = require('./mailTransporter.js');
-const rootDir = require('./path.js');
+const rootDir = require('../utils/path.js');
 const deletePdf = require('./deletePdf.js');
 
 require('dotenv').config();

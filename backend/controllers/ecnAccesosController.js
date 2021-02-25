@@ -1,6 +1,6 @@
 const accesos = require('../models/ecnAccesosModel.js');
-const accesosPdf = require('../utils/accesosPdf.js');
-const sendMail = require('../utils/sendMail.js');
+const accesosPdf = require('../mail/accesosPdf.js');
+const sendMail = require('../mail/sendMail.js');
 
 const controller = {
     create: async (req, res) => {
