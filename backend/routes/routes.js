@@ -7,6 +7,7 @@ const ecnRefuerzosEsoRoutes = require('./ecn/ecnRefuerzosEsoRouter.js');
 const ecnRefuerzosUniRoutes = require('./ecn/ecnRefuerzosUniRouter');
 const ecnTitulacionesRoutes = require('./ecn/ecnTitulacionesRouter.js')
 const ecnValencianoRoutes = require('./ecn/ecnValencianoRouter.js');
+const infoCursosRoutes = require('./infoCourses/infoCursosRouter.js')
 const logsRoutes = require('./log/logsRouter.js');
 const newsRoutes = require('./news/newsRouter.js');
 const reviewRoutes = require('./review/reviewRouter.js');
@@ -23,6 +24,7 @@ module.exports = {
     ecnRefuerzosUniRoutes,
     ecnTitulacionesRoutes,
     ecnValencianoRoutes,
+    infoCursosRoutes,
     logsRoutes,
     newsRoutes,
     reviewRoutes,
