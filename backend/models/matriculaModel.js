@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+const onlyStringValidator = require('../validators/onlyStringValidator.js');
+const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
+
 const schema = new mongoose.Schema(
     {
         userId: {
@@ -8,7 +11,8 @@ const schema = new mongoose.Schema(
         },
         name: {
             type: String,
-            required: true
+            required: true,
+            validation: onlyStringValidator
         },
         payment: {
             type: String,
@@ -31,11 +35,13 @@ const schema = new mongoose.Schema(
         },
         city: {
             type: String,
-            required: true
+            required: true,
+            validation: onlyStringValidator
         },
         province: {
             type: String,
-            required: true
+            required: true,
+            validation: onlyStringValidator
         },
         postcode: {
             type: Number,
@@ -44,8 +50,8 @@ const schema = new mongoose.Schema(
         },
         phone: {
             type: Number,
-            maxlength: 9,
-            required: true
+            required: true,
+            validator: phoneNumberValidator
         },
         paymentMethod: {
             type: String,
@@ -53,7 +59,7 @@ const schema = new mongoose.Schema(
             required: true
         },
         accountNumber: {
-            type: String,
+            type: String
         },
         terms: {
             type: Boolean,
