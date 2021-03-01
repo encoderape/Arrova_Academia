@@ -24,6 +24,7 @@ const schema = new mongoose.Schema(
         },
         terms: {
             type: Boolean,
+            required: true,
             default: false
         },
         comment: {
