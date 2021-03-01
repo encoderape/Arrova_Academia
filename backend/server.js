@@ -31,6 +31,7 @@ endpointConfig(app, '/ecnRefuerzosEso', endpoints.ecnRefuerzosEsoRoutes);
 endpointConfig(app, '/ecnRefuerzosUni', endpoints.ecnRefuerzosUniRoutes);
 endpointConfig(app, '/ecnTitulaciones', endpoints.ecnTitulacionesRoutes);
 endpointConfig(app, '/ecnValenciano', endpoints.ecnValencianoRoutes);
+endpointConfig(app, '/infoCursos', endpoints.infoCursosRoutes);
 endpointConfig(app, '/logs', endpoints.logsRoutes);
 endpointConfig(app, '/news', endpoints.newsRoutes);
 endpointConfig(app, '/review', endpoints.reviewRoutes);
