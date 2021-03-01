@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const onlyStringValidator = require('../validators/onlyStringValidator.js');
-const onlyNumberValidator = require('../validators/onlyNumberValidator.js');
 
 const schema = new mongoose.Schema(
     {
@@ -11,8 +10,7 @@ const schema = new mongoose.Schema(
         },
         description: {
             type: String,
-            required: true,
-            validation: onlyStringValidator
+            required: true
         },
         teacher: {
             type: String,
@@ -25,12 +23,10 @@ const schema = new mongoose.Schema(
             validation: onlyStringValidator
         },
         priceMonth: {
-            type: Number,
-            validation: onlyNumberValidator
+            type: String
         },
         priceCourse: {
-            type: Number,
-            validation: onlyNumberValidator
+            type: String
         },
         courseIncludes: [{
             type: String,
@@ -38,13 +34,11 @@ const schema = new mongoose.Schema(
         }],
         courseObjectives: [{
             type: String,
-            required: true,
-            validation: onlyStringValidator
+            required: true
         }],
         courseContents: [{
             type: String,
-            required: true,
-            validation: onlyStringValidator
+            required: true
         }]
     },
     {timestamps: true}
