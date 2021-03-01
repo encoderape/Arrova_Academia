@@ -2,13 +2,17 @@ const professional = require('../models/ecnProfesionalModel.js');
 const profesionalPdf = require('../mail/profesionalPdf.js');
 const sendMail = require('../mail/sendMail.js');
 
+require('dotenv').config();
+
+const mail = process.env.MAIL;
+
 const controller = {
     create: async (req, res) => {
         try{
             const item = await professional.create(req.body);
             await profesionalPdf(item);
             setTimeout(() => {
-                sendMail(item.email, `Estudia con nosotros Profesional ${item.companyName}`, 'profesional.pdf');
+                sendMail(mail, `Estudia con nosotros Profesional ${item.companyName}`, 'profesional.pdf');
                 res.status(201).send(item);
             }, 2000);
         }catch(err) {

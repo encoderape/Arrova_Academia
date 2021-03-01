@@ -2,8 +2,12 @@ const dniValidator = require('../../validators/dniValidator.js');
 
 describe('dni validation', () => {
     it('this is a valid dni', () => {
-        const dni = '12345678A';
+        const dni = '23836682B';
         expect(true).toBe(dniValidator(dni));
+    });
+    it('this is not a valid dni', () => {
+        const dni = '23836782B';
+        expect(false).toBe(dniValidator(dni));
     });
     it('this is not a valid dni, because two characters', () => {
         const dni = '12345678AB';

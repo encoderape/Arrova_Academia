@@ -2,13 +2,17 @@ const valenciano = require('../models/encValencianoModel.js');
 const valencianoPdf = require('../mail/valencianoPdf.js');
 const sendMail = require('../mail/sendMail.js');
 
+require('dotenv').config();
+
+const mail = process.env.MAIL;
+
 const controller = {
     create:  async (req, res) => {
         try{
             const item = await valenciano.create(req.body);
             await valencianoPdf(item);
             setTimeout(() => {
-                sendMail(item.email, `Estudia con nosotros Valenciano ${item.fullName}`, 'valenciano.pdf');
+                sendMail(mail, `Estudia con nosotros Valenciano ${item.fullName}`, 'valenciano.pdf');
                 res.status(201).send(item);
             }, 2000);
         }catch(err) {
