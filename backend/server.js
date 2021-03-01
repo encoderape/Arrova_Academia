@@ -33,6 +33,7 @@ endpointConfig(app, '/ecnTitulaciones', endpoints.ecnTitulacionesRoutes);
 endpointConfig(app, '/ecnValenciano', endpoints.ecnValencianoRoutes);
 endpointConfig(app, '/infoCursos', endpoints.infoCursosRoutes);
 endpointConfig(app, '/logs', endpoints.logsRoutes);
+endpointConfig(app, '/matricula', endpoints.matriculaRoutes);
 endpointConfig(app, '/news', endpoints.newsRoutes);
 endpointConfig(app, '/review', endpoints.reviewRoutes);
 endpointConfig(app, '/teacher', endpoints.teacherRoutes);
