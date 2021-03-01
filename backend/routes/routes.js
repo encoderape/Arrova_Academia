@@ -9,6 +9,7 @@ const ecnTitulacionesRoutes = require('./ecn/ecnTitulacionesRouter.js')
 const ecnValencianoRoutes = require('./ecn/ecnValencianoRouter.js');
 const infoCursosRoutes = require('./infoCourses/infoCursosRouter.js')
 const logsRoutes = require('./log/logsRouter.js');
+const matriculaRoutes = require('./matricula/matriculaRouter.js');
 const newsRoutes = require('./news/newsRouter.js');
 const reviewRoutes = require('./review/reviewRouter.js');
 const teacherRoutes = require('./teacher/teacherRouter.js');
@@ -26,6 +27,7 @@ module.exports = {
     ecnValencianoRoutes,
     infoCursosRoutes,
     logsRoutes,
+    matriculaRoutes,
     newsRoutes,
     reviewRoutes,
     teacherRoutes,
