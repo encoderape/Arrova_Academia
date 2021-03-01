@@ -9,7 +9,7 @@ function accesosPdf(item) {
             <p style="text-align: center;">Teléfono de contacto: ${item.phone}</p>
         </div>
         <br>
-        <div style="border: 1px solid black; display: flex; flex-direction: column; align-items: center; padding: 10px; margin: 0 20px;">
+        <div style="border: 1px solid #000000; display: flex; flex-direction: column; align-items: center; padding: 10px; margin: 0 20px;">
             <h1 style="text-align: center;">Estudia con nosotros Accesos</h1>
             <p style="text-align: center;">Examen de acceso a ${item.accessTest}</p>
             <p style="text-align: center;">${item.nativeLanguage} como lengua materna</p>

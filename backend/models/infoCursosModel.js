@@ -1,46 +1,50 @@
 const mongoose = require('mongoose');
 
+const onlyStringValidator = require('../validators/onlyStringValidator.js');
+const onlyNumberValidator = require('../validators/onlyNumberValidator.js');
+
 const schema = new mongoose.Schema(
     {
-        course: {
-          type: String,
-          require: true
-        },
         title: {
             type: String,
             require: true
         },
         description: {
             type: String,
-            required: true
+            required: true,
+            validation: onlyStringValidator
         },
         teacher: {
             type: String,
-            require: true
+            require: true,
+            validation: onlyStringValidator
         },
-        lenguage: {
+        language: {
             type: String,
-            require: true
+            require: true,
+            validation: onlyStringValidator
         },
         priceMonth: {
             type: Number,
-            required: true
+            validation: onlyNumberValidator
         },
         priceCourse: {
             type: Number,
-            required: true
+            validation: onlyNumberValidator
         },
         courseIncludes: [{
             type: String,
-            required: true
+            required: true,
         }],
         courseObjectives: [{
             type: String,
-            required: true
+            required: true,
+            validation: onlyStringValidator
         }],
         courseContents: [{
             type: String,
-            required: true
+            required: true,
+            validation: onlyStringValidator
         }]
     },
     {timestamps: true}
