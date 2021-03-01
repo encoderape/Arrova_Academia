@@ -9,11 +9,6 @@ const schema = new mongoose.Schema(
           type: String,
           required: true
         },
-        name: {
-            type: String,
-            required: true,
-            validation: onlyStringValidator
-        },
         payment: {
             type: String,
             enum: ['mensual', 'total', 'dos pagos'],
@@ -47,11 +42,6 @@ const schema = new mongoose.Schema(
             type: Number,
             maxlength: 5,
             required: true
-        },
-        phone: {
-            type: Number,
-            required: true,
-            validator: phoneNumberValidator
         },
         paymentMethod: {
             type: String,
