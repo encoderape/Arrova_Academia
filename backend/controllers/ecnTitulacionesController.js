@@ -2,17 +2,13 @@ const titulaciones = require('../models/ecnTitulacionesModel.js');
 const titulacionesPdf = require('../mail/titulacionesPdf.js');
 const sendMail = require('../mail/sendMail.js');
 
-require('dotenv').config();
-
-const mail = process.env.MAIL;
-
 const controller = {
     create: async (req, res) => {
         try{
             const item = await titulaciones.create(req.body);
             await titulacionesPdf(item);
             setTimeout(() => {
-                sendMail(mail, `Estudia con nosotros Titulaciones ${item.fullName}`, 'titulaciones.pdf');
+                sendMail(`Estudia con nosotros Titulaciones ${item.fullName}`, 'titulaciones.pdf');
                 res.status(201).send(item);
             }, 2000);
         }catch(err) {

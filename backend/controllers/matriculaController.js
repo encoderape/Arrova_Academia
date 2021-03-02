@@ -1,10 +1,22 @@
 const matricula = require('../models/matriculaModel.js');
+const user = require('../models/userModel.js');
+const matriculaPdf = require('../mail/matriculaPdf.js');
+const matriculaUserPdf = require('../mail/matriculaUserPdf.js');
+const sendMail = require('../mail/sendMail.js');
 
 const controller = {
     create: async (req, res) => {
         try{
             const item = await matricula.create(req.body);
-            res.status(201).send(item);
+            const itemUser = await user.findById(item.userId);
+            console.log(itemUser);
+            await matriculaPdf(item, itemUser);
+            await matriculaUserPdf();
+            setTimeout(() => {
+                sendMail(`Matricula ${user.name}`, 'matricula.pdf');
+                sendMail(`Bienvenido a tu nuevo curso`, 'matriculaUser.pdf', itemUser.email);
+                res.status(201).send(item);
+            }, 2000);
         }catch(err) {
             res.status(400).send(err);
         }

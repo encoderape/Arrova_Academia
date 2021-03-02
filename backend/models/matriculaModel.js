@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
 const onlyStringValidator = require('../validators/onlyStringValidator.js');
-const phoneNumberValidator = require('../validators/phoneNumberValidator.js');
 
 const schema = new mongoose.Schema(
     {
         userId: {
           type: String,
           required: true
+        },
+        courseName: {
+            type: String,
+            required: true
         },
         payment: {
             type: String,
