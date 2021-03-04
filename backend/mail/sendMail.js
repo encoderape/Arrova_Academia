@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const mail = process.env.MAIL;
 
-function sendMail(userMail, subject, fileName) {
+function sendMail(subject, fileName, userMail = mail) {
     const mailInfo = {
         from: mail,
         to: userMail,

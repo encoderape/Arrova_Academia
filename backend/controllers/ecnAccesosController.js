@@ -2,17 +2,13 @@ const accesos = require('../models/ecnAccesosModel.js');
 const accesosPdf = require('../mail/accesosPdf.js');
 const sendMail = require('../mail/sendMail.js');
 
-require('dotenv').config();
-
-const mail = process.env.MAIL;
-
 const controller = {
     create: async (req, res) => {
         try {
             const item = await accesos.create(req.body);
             await accesosPdf(item);
             setTimeout(() => {
-                sendMail(mail, `Estudia con nosotros Accesos ${item.fullName}`, 'accesos.pdf');
+                sendMail(`Estudia con nosotros Accesos ${item.fullName}`, 'accesos.pdf');
                 res.status(201).send(item);
             }, 2000);
         } catch (err) {
